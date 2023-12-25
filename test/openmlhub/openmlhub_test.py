@@ -1,7 +1,8 @@
 """ Module tests
 """
 import sys
-from openmlhub import model_logger, OpenMLHubConf
+from openmlhub import model_logger
+from openmlhub.config import OpenMLHubConf
 
 def test_openmlhub_imported():
     assert "openmlhub" in sys.modules

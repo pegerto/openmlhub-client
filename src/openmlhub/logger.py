@@ -1,8 +1,18 @@
-""" Logger implements logging funcionality for machine learnign models.
+""" Logger implements logging funcionality for machine learning models.
 """
 
-from . import OpenMLHubConf
+from .client import OpenMLHubClient
 
 class Logger(object):
-    def __init__(self, conf: OpenMLHubConf) -> None:
-        self.conf = conf
+    """ This class collects infomration from the model and datasources, and 
+        allow publish the data to OpenMLHub
+    """
+    def __init__(self, client: OpenMLHubClient, version: str = "draft") -> None:
+        self._client = client
+        self.version = version
+        
+
+    def log(self):
+        pass
+        
+
