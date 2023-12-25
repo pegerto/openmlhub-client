@@ -24,4 +24,4 @@ class OpenMLHubClient:
             json={})
 
         if resp.status_code != 201:
-            raise OpenMLHubClientError("log model, invalid response: {resp.status_code}")
+            raise OpenMLHubClientError(f"log model, invalid response: {resp.status_code}")
