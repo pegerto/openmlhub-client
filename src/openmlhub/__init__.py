@@ -5,5 +5,5 @@ class OpenMLHubConf:
         self.model_id = model_id
 
 
-def model_logger(conf):
-    
+def model_logger(conf: OpenMLHubConf):
+    pass
