@@ -13,6 +13,6 @@ class Logger(object):
         
 
     def log(self):
-        pass
+        self._client.log()
         
 
