@@ -14,9 +14,9 @@ class OpenMLHubClient:
 
             
     def log(self):
-        """ Implement data loging
+        """ Implement data logging
         """
-        resp = requests.post('https://openmlhub.com/model_log',
+        resp = requests.post('https://openmlhub.com/log_model',
             headers= {
                 'uid': self.conf.uid,
                 'api_key': self.conf.api_key
