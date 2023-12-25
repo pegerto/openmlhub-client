@@ -1,6 +1,5 @@
 [project]
 name = "openmlhub"
-version = "0.0.0"
 authors = [
   { name="Pegerto Fernandez", email="pegerto@gmail.com" },
 ]
@@ -16,11 +15,14 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence"
 ]
 
-dynamic = ["dependencies"]
+dynamic = ["dependencies", "version"]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
