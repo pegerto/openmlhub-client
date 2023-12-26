@@ -27,22 +27,19 @@ Follow these steps to get started with the OpenMLHub Client:
 
 3. **Usage**:
    ```python
-   from openmlhub import OpenMLHub
+   import os
+   from openmlhub import make_logger
+   from openmlhub.config import OpenMLHubConf('<user_id>', 'api_key')
 
-   client = OpenMLHubClient()
+   api_key = os.environ['OPENMLHUB_API_KEY']
+   logger = make_logger(OpenMLHubConf('<user_id>', api_key), '<model_id>')
+   logger.log()
    ```
 
 ## Examples
 
 ```python
-# Track a new model
-model_id = client.track_model(model_name='My_Model', algorithm='Random Forest', dataset='iris')
-
-# Validate the model
-validation_result = client.validate_model(model_id)
-
-# Retrieve model details
-model_details = client.get_model_details(model_id)
+TBC
 ```
 
 ## Contributing
