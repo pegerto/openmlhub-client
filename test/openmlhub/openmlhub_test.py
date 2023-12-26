@@ -9,4 +9,4 @@ def test_openmlhub_imported():
 
 def test_openmlhub_logger():
     conf = OpenMLHubConf("","")
-    model_logger(conf)
+    model_logger(conf, "model_id")
