@@ -29,11 +29,15 @@ class Logger(object):
 
     def with_f1_epoc(self, measurement: np.array):
         """ Add f1 mesurement """
-        return self._with_metric_epoc(TrainningMetric.LOSS, measurement)
+        return self._with_metric_epoc(TrainningMetric.F1, measurement)
 
     def with_uac_epoc(self, measurement: np.array):
         """ Add loss mesurement """
         return self._with_metric_epoc(TrainningMetric.AUC, measurement)
+
+    def with_acc_epoc(self, measurement: np.array):
+        """ Add accuracy mesurement """
+        return self._with_metric_epoc(TrainningMetric.ACC, measurement)
 
     
     def log(self):
