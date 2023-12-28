@@ -5,7 +5,7 @@ import numpy as np
 
 from .client import OpenMLHubClient
 from .model  import ModelMetadata
-from .metric import Metric, TrainningMetric, TrainningEpocMetric
+from .metric import TrainningEpocMetric
 
 class Logger(object):
     """ This class collects infomration from the model and datasources, and 
@@ -18,26 +18,27 @@ class Logger(object):
         
         self.metrics = []
 
-    def _with_metric_epoc(self, metric_name: TrainningMetric,  measurement: np.array):
+    def _with_metric_epoc(self, metric_name: str,  measurement: np.array):
+        # TODO: Metric name use to be a StrEnum but not supported in 3.10, update onces enabled.
         self.metrics.append(
             TrainningEpocMetric(len(measurement), metric_name, measurement.tolist()))
         return self    
 
     def with_loss_epoc(self, measurement: np.array):
         """ Add loss mesurement """
-        return self._with_metric_epoc(TrainningMetric.LOSS, measurement)
+        return self._with_metric_epoc("loss", measurement)
 
     def with_f1_epoc(self, measurement: np.array):
         """ Add f1 mesurement """
-        return self._with_metric_epoc(TrainningMetric.F1, measurement)
+        return self._with_metric_epoc("f1", measurement)
 
     def with_uac_epoc(self, measurement: np.array):
         """ Add loss mesurement """
-        return self._with_metric_epoc(TrainningMetric.AUC, measurement)
+        return self._with_metric_epoc("uac", measurement)
 
     def with_acc_epoc(self, measurement: np.array):
         """ Add accuracy mesurement """
-        return self._with_metric_epoc(TrainningMetric.ACC, measurement)
+        return self._with_metric_epoc("acc", measurement)
 
     
     def log(self):
