@@ -1,7 +1,8 @@
-import pytest
-import numpy as np
 import tempfile
 import os
+
+import pytest
+import numpy as np
 
 from unittest.mock import Mock
 

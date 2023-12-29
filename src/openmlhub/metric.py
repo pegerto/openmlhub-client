@@ -11,6 +11,9 @@ class TrainningEpocMetric(Metric):
         self.epocs = epocs
         self.metric_name = metric_name
         self.measurement = measurement
+    
+    def __repr__(self) -> str:
+        return f'TrainningEpocMetric({self.metric_name})'
         
     def to_dict(self):
         return {

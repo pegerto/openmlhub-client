@@ -1,4 +1,5 @@
 from .metric import Metric
+
 class ModelMetadata:
     ''' Representation of sepecific model after trainning.
     '''
